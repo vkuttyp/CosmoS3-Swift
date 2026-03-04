@@ -1,0 +1,103 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/master.swiftdeps"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Auth/AuthManager.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/AuthManager.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/AuthManager.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/AuthManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/AuthManager.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/AuthManager.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Data/BucketManager.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketManager.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketManager.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketManager.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketManager.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Data/DataAccess.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DataAccess.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DataAccess.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DataAccess~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DataAccess.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DataAccess.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Data/DatabaseFactory.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DatabaseFactory.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DatabaseFactory.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DatabaseFactory~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DatabaseFactory.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DatabaseFactory.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Handlers/BucketHandler.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketHandler.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketHandler.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketHandler.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/BucketHandler.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Handlers/ObjectHandler.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ObjectHandler.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ObjectHandler.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ObjectHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ObjectHandler.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ObjectHandler.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Handlers/ServiceHandler.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ServiceHandler.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ServiceHandler.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ServiceHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ServiceHandler.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/ServiceHandler.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Models/Models.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/Models.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/Models.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/Models~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/Models.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/Models.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/S3Error.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Error.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Error.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Error~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Error.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Error.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/S3Middleware.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Middleware.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Middleware.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Middleware~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Middleware.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Middleware.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/S3Request.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Request.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Request.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Request~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Request.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Request.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Storage/DiskStorageDriver.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DiskStorageDriver.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DiskStorageDriver.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DiskStorageDriver~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DiskStorageDriver.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DiskStorageDriver.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Xml/S3Xml.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Xml.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Xml.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Xml~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Xml.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/S3Xml.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/resource_bundle_accessor.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/resource_bundle_accessor.dia"
+  }
+}

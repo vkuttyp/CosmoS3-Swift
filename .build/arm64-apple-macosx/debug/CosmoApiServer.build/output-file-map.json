@@ -1,0 +1,152 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/master.swiftdeps"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Auth/JwtMiddleware.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtMiddleware.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtMiddleware.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtMiddleware~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtMiddleware.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtMiddleware.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Auth/JwtService.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtService.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtService.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtService~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtService.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/JwtService.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Controllers/ActionResult.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ActionResult.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ActionResult.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ActionResult~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ActionResult.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ActionResult.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Controllers/ControllerBase.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ControllerBase.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ControllerBase.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ControllerBase~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ControllerBase.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ControllerBase.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Hosting/CosmoWebApplication.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplication.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplication.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplication~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplication.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplication.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Hosting/CosmoWebApplicationBuilder.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplicationBuilder.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplicationBuilder.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplicationBuilder~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplicationBuilder.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CosmoWebApplicationBuilder.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Http/HttpContext.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpContext.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpContext.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpContext~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpContext.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpContext.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Http/HttpMethod.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpMethod.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpMethod.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpMethod~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpMethod.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpMethod.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Http/HttpRequest.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpRequest.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpRequest.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpRequest~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpRequest.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpRequest.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Http/HttpResponse.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpResponse.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpResponse.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpResponse~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpResponse.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/HttpResponse.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Middleware/CorsMiddleware.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CorsMiddleware.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CorsMiddleware.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CorsMiddleware~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CorsMiddleware.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/CorsMiddleware.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Middleware/LoggingMiddleware.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/LoggingMiddleware.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/LoggingMiddleware.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/LoggingMiddleware~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/LoggingMiddleware.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/LoggingMiddleware.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Middleware/MiddlewarePipeline.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewarePipeline.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewarePipeline.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewarePipeline~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewarePipeline.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewarePipeline.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Middleware/MiddlewareProtocol.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewareProtocol.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewareProtocol.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewareProtocol~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewareProtocol.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/MiddlewareProtocol.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Routing/RouteTable.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTable.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTable.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTable~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTable.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTable.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Routing/RouteTemplate.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTemplate.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTemplate.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTemplate~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTemplate.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouteTemplate.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Routing/RouterMiddleware.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouterMiddleware.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouterMiddleware.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouterMiddleware~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouterMiddleware.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RouterMiddleware.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Transport/Http11ChannelHandler.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/Http11ChannelHandler.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/Http11ChannelHandler.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/Http11ChannelHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/Http11ChannelHandler.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/Http11ChannelHandler.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Transport/NIOHttpServer.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/NIOHttpServer.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/NIOHttpServer.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/NIOHttpServer~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/NIOHttpServer.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/NIOHttpServer.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Transport/RequestAccumulator.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RequestAccumulator.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RequestAccumulator.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RequestAccumulator~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RequestAccumulator.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/RequestAccumulator.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoApiServer-Swift/Sources/CosmoApiServer/Transport/ResponseWriter.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ResponseWriter.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ResponseWriter.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ResponseWriter~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ResponseWriter.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoApiServer.build/ResponseWriter.dia"
+  }
+}

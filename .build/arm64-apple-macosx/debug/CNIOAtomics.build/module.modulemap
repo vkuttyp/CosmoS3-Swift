@@ -1,0 +1,4 @@
+module CNIOAtomics {
+    umbrella header "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/CNIOAtomics/include/CNIOAtomics.h"
+    export *
+}

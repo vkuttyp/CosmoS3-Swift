@@ -1,0 +1,3 @@
+module CosmoSQLite {
+    header "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/include/CosmoSQLite-Swift.h"
+}

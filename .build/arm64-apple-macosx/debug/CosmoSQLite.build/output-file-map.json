@@ -1,0 +1,26 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/master.swiftdeps"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoSQLite/SQLiteBackup.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteBackup.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteBackup.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteBackup~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteBackup.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteBackup.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoSQLite/SQLiteConnection.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnection.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnection.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnection~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnection.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnection.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoSQLite/SQLiteConnectionPool.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnectionPool.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnectionPool.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnectionPool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnectionPool.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoSQLite.build/SQLiteConnectionPool.dia"
+  }
+}

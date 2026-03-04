@@ -1,0 +1,17 @@
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/ByteCollectionUtils.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPDecoder.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPEncoder.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPHeaderValidator.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPHeaders+Validation.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPPipelineSetup.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPServerPipelineHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPServerProtocolErrorHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPServerUpgradeHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPTypedPipelineSetup.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/HTTPTypes.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOHTTPClientUpgradeHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOHTTPObjectAggregator.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOTypedHTTPClientUpgradeHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOTypedHTTPClientUpgraderStateMachine.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOTypedHTTPServerUpgradeHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/NIOHTTP1/NIOTypedHTTPServerUpgraderStateMachine.swift

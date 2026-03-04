@@ -1,0 +1,110 @@
+{
+  "": {
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/master.swiftdeps"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/Auth/NTLMAuth.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/NTLMAuth.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/NTLMAuth.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/NTLMAuth~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/NTLMAuth.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/NTLMAuth.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/MSSQLBackup.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBackup.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBackup.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBackup~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBackup.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBackup.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/MSSQLBulkInsert.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBulkInsert.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBulkInsert.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBulkInsert~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBulkInsert.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLBulkInsert.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/MSSQLConnection.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnection.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnection.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnection~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnection.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnection.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/MSSQLConnectionPool.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnectionPool.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnectionPool.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnectionPool~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnectionPool.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLConnectionPool.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/MSSQLProcResult.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLProcResult.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLProcResult.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLProcResult~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLProcResult.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/MSSQLProcResult.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSDecoder.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSDecoder.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSDecoder.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSDecoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSDecoder.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSDecoder.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSHandler.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSHandler.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSHandler.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSHandler.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSHandler.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSLogin7.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSLogin7.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSLogin7.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSLogin7~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSLogin7.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSLogin7.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSMessages.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSMessages.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSMessages.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSMessages~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSMessages.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSMessages.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSPacket.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPacket.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPacket.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPacket~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPacket.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPacket.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSPreLogin.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPreLogin.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPreLogin.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPreLogin~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPreLogin.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSPreLogin.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSRPCProcRequest.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCProcRequest.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCProcRequest.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCProcRequest~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCProcRequest.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCProcRequest.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSRPCRequest.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCRequest.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCRequest.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCRequest~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCRequest.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSRPCRequest.dia"
+  },
+  "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/CosmoSQLClient-Swift/Sources/CosmoMSSQL/TDS/TDSTLSFramer.swift": {
+    "dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSTLSFramer.d",
+    "object": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSTLSFramer.swift.o",
+    "swiftmodule": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSTLSFramer~partial.swiftmodule",
+    "swift-dependencies": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSTLSFramer.swiftdeps",
+    "diagnostics": "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/TDSTLSFramer.dia"
+  }
+}

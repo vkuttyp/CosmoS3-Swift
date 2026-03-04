@@ -1,0 +1,3 @@
+module BitCollections {
+    header "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/BitCollections.build/include/BitCollections-Swift.h"
+}

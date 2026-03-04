@@ -1,0 +1,14 @@
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Auth/AuthManager.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Data/BucketManager.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Data/DataAccess.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Data/DatabaseFactory.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Handlers/BucketHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Handlers/ObjectHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Handlers/ServiceHandler.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Models/Models.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/S3Error.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/S3Middleware.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/S3Request.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Storage/DiskStorageDriver.swift
+/Users/kutty/dev/CosmoS3-Swift/Sources/CosmoS3/Xml/S3Xml.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoS3.build/DerivedSources/resource_bundle_accessor.swift

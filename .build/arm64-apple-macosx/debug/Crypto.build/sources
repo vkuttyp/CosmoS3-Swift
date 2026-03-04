@@ -1,0 +1,81 @@
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/AES/GCM/AES-GCM.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/AES/GCM/BoringSSL/AES-GCM_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/ChachaPoly/BoringSSL/ChaChaPoly_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/ChachaPoly/ChaChaPoly.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/Cipher.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/AEADs/Nonces.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/ASN1.swift
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Any.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1BitString.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Boolean.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Identifier.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Integer.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Null.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1OctetString.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ASN1Strings.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ArraySliceBigint.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/GeneralizedTime.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/Basic ASN1 Types/ObjectIdentifier.swift'
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/ECDSASignature.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/PEMDocument.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/PKCS8PrivateKey.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/SEC1PrivateKey.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/ASN1/SubjectPublicKeyInfo.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/CryptoError_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/CryptoKitErrors.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Digests/BoringSSL/Digest_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Digests/Digest.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Digests/Digests.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Digests/HashFunctions.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Digests/HashFunctions_SHA2.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/HPKE-AEAD.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/HPKE-Ciphersuite.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/HPKE-KDF.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/HPKE-KexKeyDerivation.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/HPKE-LabeledExtract.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/HPKE-Utils.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/KEM/Conformances/DHKEM.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/KEM/Conformances/HPKE-KEM-Curve25519.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/KEM/Conformances/HPKE-NIST-EC-KEMs.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Ciphersuite/KEM/HPKE-KEM.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/HPKE-Errors.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/HPKE.swift
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Key Schedule/HPKE-Context.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Key Schedule/HPKE-KeySchedule.swift'
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/HPKE/Modes/HPKE-Modes.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Insecure/Insecure.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Insecure/Insecure_HashFunctions.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/KEM/KEM.swift
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Key Agreement/BoringSSL/ECDH_boring.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Key Agreement/DH.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Key Agreement/ECDH.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Key Derivation/HKDF.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Key Wrapping/AESWrap.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Key Wrapping/BoringSSL/AESWrap_boring.swift'
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/Ed25519_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/NISTCurvesKeys_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/BoringSSL/X25519Keys_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/Curve25519.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/Ed25519Keys.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/NISTCurvesKeys.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/EC/X25519Keys.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Keys/Symmetric/SymmetricKeys.swift
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Message Authentication Codes/HMAC/HMAC.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Message Authentication Codes/MACFunctions.swift'
+'/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Message Authentication Codes/MessageAuthenticationCode.swift'
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/PRF/AES.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/BoringSSL/ECDSASignature_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/BoringSSL/ECDSA_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/BoringSSL/EdDSA_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/ECDSA.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/Ed25519.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Signatures/Signature.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/CryptoKitErrors_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/RNG_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/SafeCompare_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/BoringSSL/Zeroization_boring.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/PrettyBytes.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/SafeCompare.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/SecureBytes.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-crypto/Sources/Crypto/Util/Zeroization.swift
+/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/Crypto.build/DerivedSources/resource_bundle_accessor.swift
