@@ -95,14 +95,14 @@ public actor DataAccess {
             "SELECT COALESCE(MAX(version), 0) AS v FROM \(t)objects WHERE bucketguid = ? AND objectkey = ?",
             [.string(bucketGuid), .string(key)]
         )
-        return (rows.first?["v"].asInt() ?? 0) + 1
+        return Int(rows.first?["v"].asInt64() ?? 0) + 1
     }
 
     public func saveObject(_ obj: S3ObjectMeta) async throws {
         let rows = try await db.query(
             "SELECT COUNT(*) AS cnt FROM \(t)objects WHERE guid = ?", [.string(obj.guid)]
         )
-        let exists = (rows.first?["cnt"].asInt() ?? 0) > 0
+        let exists = (rows.first?["cnt"].asInt64() ?? 0) > 0
 
         if exists {
             try await db.execute(
@@ -192,8 +192,8 @@ public actor DataAccess {
             "SELECT COUNT(*) AS cnt, COALESCE(SUM(contentlength), 0) AS bytes FROM \(t)objects WHERE bucketguid = ? AND deletemarker = 0",
             [.string(bucketGuid)]
         )
-        let cnt = rows.first?["cnt"].asInt() ?? 0
-        let bytes = rows.first?["bytes"].asInt() ?? 0
+        let cnt = Int(rows.first?["cnt"].asInt64() ?? 0)
+        let bytes = Int(rows.first?["bytes"].asInt64() ?? 0)
         return (cnt, bytes)
     }
 
@@ -211,30 +211,30 @@ public actor DataAccess {
     }
 
     private func mapBucket(_ row: SQLRow) -> S3Bucket {
-        S3Bucket(id: row["id"].asInt() ?? 0, guid: row["guid"].asString() ?? "",
+        S3Bucket(id: Int(row["id"].asInt64() ?? 0), guid: row["guid"].asString() ?? "",
                  ownerGuid: row["ownerguid"].asString() ?? "", name: row["name"].asString() ?? "",
                  region: row["regionstring"].asString() ?? "us-west-1",
                  storageType: row["storagetype"].asString() ?? "Disk",
                  diskDirectory: row["diskdirectory"].asString() ?? "",
-                 enableVersioning: (row["enableversioning"].asInt() ?? 0) != 0,
-                 enablePublicWrite: (row["enablepublicwrite"].asInt() ?? 0) != 0,
-                 enablePublicRead: (row["enablepublicread"].asInt() ?? 0) != 0,
+                 enableVersioning: (row["enableversioning"].asInt64() ?? 0) != 0,
+                 enablePublicWrite: (row["enablepublicwrite"].asInt64() ?? 0) != 0,
+                 enablePublicRead: (row["enablepublicread"].asInt64() ?? 0) != 0,
                  createdUtc: row["createdutc"].asString() ?? "")
     }
 
     private func mapObject(_ row: SQLRow) -> S3ObjectMeta {
-        S3ObjectMeta(id: row["id"].asInt() ?? 0, guid: row["guid"].asString() ?? "",
+        S3ObjectMeta(id: Int(row["id"].asInt64() ?? 0), guid: row["guid"].asString() ?? "",
                      bucketGuid: row["bucketguid"].asString() ?? "",
                      ownerGuid: row["ownerguid"].asString() ?? "",
                      authorGuid: row["authorguid"].asString() ?? "",
                      key: row["objectkey"].asString() ?? "",
                      contentType: row["contenttype"].asString() ?? "application/octet-stream",
-                     contentLength: row["contentlength"].asInt() ?? 0,
-                     version: row["version"].asInt() ?? 1,
+                     contentLength: Int(row["contentlength"].asInt64() ?? 0),
+                     version: Int(row["version"].asInt64() ?? 1),
                      etag: row["etag"].asString() ?? "",
                      blobFilename: row["blobfilename"].asString() ?? "",
-                     isFolder: (row["isfolder"].asInt() ?? 0) != 0,
-                     deleteMarker: (row["deletemarker"].asInt() ?? 0) != 0,
+                     isFolder: (row["isfolder"].asInt64() ?? 0) != 0,
+                     deleteMarker: (row["deletemarker"].asInt64() ?? 0) != 0,
                      md5: row["md5"].asString(),
                      metadata: row["metadata"].asString())
     }

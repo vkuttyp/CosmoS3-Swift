@@ -106,14 +106,13 @@ public enum DatabaseFactory {
         case .mysql:     filename = "mysql.sql"
         case .sqlserver: filename = "mssql.sql"
         }
-        if let url = Bundle.module.url(forResource: filename, withExtension: nil,
-                                       subdirectory: "Schema"),
+        if let url = Bundle.module.url(forResource: filename, withExtension: nil),
            let sql = try? String(contentsOf: url, encoding: .utf8) {
             return sql
         }
         // Linux fallback: look next to the executable
         let execDir = URL(fileURLWithPath: CommandLine.arguments[0]).deletingLastPathComponent()
-        let fallback = execDir.appendingPathComponent("Schema/\(filename)")
+        let fallback = execDir.appendingPathComponent(filename)
         guard let sql = try? String(contentsOf: fallback, encoding: .utf8) else {
             throw S3Error.internalError("Schema file '\(filename)' not found in bundle or exe dir")
         }
