@@ -25,7 +25,7 @@ print("[CosmoS3Host.Postgres] Starting on port \(settings.port)...")
 
 let rawDb = try await DatabaseFactory.create(type: .postgres, connectionString: settings.connectionString)
 try await DatabaseFactory.ensureSchema(db: rawDb, type: .postgres)
-let da = DataAccess(db: rawDb)
+let da = DataAccess(db: rawDb, tablePrefix: "s3.", usePostgres: true)
 let bucketManager = BucketManager(da: da)
 try await bucketManager.load()
 

@@ -5,13 +5,16 @@ import CosmoSQLCore
 
 public actor DataAccess {
     let db: any SQLDatabase
-    private let t: String   // table prefix "s3_"
-    private let useMssql: Bool  // MSSQL uses TOP n / different dialect
+    private let t: String       // table prefix "s3_" or "s3."
+    private let useMssql: Bool  // MSSQL: TOP 1 instead of LIMIT 1
+    private let usePostgres: Bool  // Postgres: $1,$2 instead of ?
 
-    public init(db: any SQLDatabase, tablePrefix: String = "s3_", useMssql: Bool = false) {
+    public init(db: any SQLDatabase, tablePrefix: String = "s3_",
+                useMssql: Bool = false, usePostgres: Bool = false) {
         self.db = db
         self.t = tablePrefix
         self.useMssql = useMssql
+        self.usePostgres = usePostgres
     }
 
     /// Returns `TOP 1` (MSSQL) or empty string (all others — `LIMIT 1` appended at end).
@@ -19,39 +22,54 @@ public actor DataAccess {
     /// Appended at end of SELECT for non-MSSQL databases.
     private var limit1: String { useMssql ? "" : " LIMIT 1" }
 
+    /// Rewrites `?` to `$1, $2, ...` for PostgreSQL.
+    private func sql(_ query: String) -> String {
+        guard usePostgres else { return query }
+        var result = ""; var idx = 1
+        for ch in query { if ch == "?" { result += "$\(idx)"; idx += 1 } else { result.append(ch) } }
+        return result
+    }
+
+    private func qry(_ query: String, _ binds: [SQLValue] = []) async throws -> [SQLRow] {
+        try await db.query(sql(query), binds)
+    }
+    private func exec(_ query: String, _ binds: [SQLValue] = []) async throws {
+        try await db.execute(sql(query), binds)
+    }
+
     // MARK: - Users
 
     public func getUser(guid: String) async throws -> S3User? {
-        let rows = try await db.query("SELECT guid, name, email, createdutc FROM \(t)users WHERE guid = ?", [.string(guid)])
+        let rows = try await qry("SELECT guid, name, email, createdutc FROM \(t)users WHERE guid = ?", [.string(guid)])
         return rows.first.map(mapUser)
     }
 
     // MARK: - Credentials
 
     public func getCredentialByAccessKey(_ key: String) async throws -> S3Credential? {
-        let rows = try await db.query("SELECT guid, userguid, accesskey, secretkey, isbase64 FROM \(t)credentials WHERE accesskey = ?", [.string(key)])
+        let rows = try await qry("SELECT guid, userguid, accesskey, secretkey, isbase64 FROM \(t)credentials WHERE accesskey = ?", [.string(key)])
         return rows.first.map(mapCredential)
     }
 
     // MARK: - Buckets
 
     public func getBuckets() async throws -> [S3Bucket] {
-        let rows = try await db.query("SELECT * FROM \(t)buckets ORDER BY name", [])
+        let rows = try await qry("SELECT * FROM \(t)buckets ORDER BY name", [])
         return rows.map(mapBucket)
     }
 
     public func getBucketsByUser(_ userGuid: String) async throws -> [S3Bucket] {
-        let rows = try await db.query("SELECT * FROM \(t)buckets WHERE ownerguid = ? ORDER BY name", [.string(userGuid)])
+        let rows = try await qry("SELECT * FROM \(t)buckets WHERE ownerguid = ? ORDER BY name", [.string(userGuid)])
         return rows.map(mapBucket)
     }
 
     public func getBucketByName(_ name: String) async throws -> S3Bucket? {
-        let rows = try await db.query("SELECT * FROM \(t)buckets WHERE name = ?", [.string(name)])
+        let rows = try await qry("SELECT * FROM \(t)buckets WHERE name = ?", [.string(name)])
         return rows.first.map(mapBucket)
     }
 
     public func addBucket(_ bucket: S3Bucket) async throws {
-        try await db.execute(
+        try await exec(
             """
             INSERT INTO \(t)buckets
               (guid, ownerguid, name, regionstring, storagetype, diskdirectory,
@@ -71,13 +89,13 @@ public actor DataAccess {
     }
 
     public func deleteBucket(guid: String) async throws {
-        try await db.execute("DELETE FROM \(t)buckets WHERE guid = ?", [.string(guid)])
+        try await exec("DELETE FROM \(t)buckets WHERE guid = ?", [.string(guid)])
     }
 
     // MARK: - Objects
 
     public func getObjectLatest(bucketGuid: String, key: String) async throws -> S3ObjectMeta? {
-        let rows = try await db.query(
+        let rows = try await qry(
             "SELECT \(top1)* FROM \(t)objects WHERE bucketguid = ? AND objectkey = ? AND deletemarker = 0 ORDER BY version DESC\(limit1)",
             [.string(bucketGuid), .string(key)]
         )
@@ -85,7 +103,7 @@ public actor DataAccess {
     }
 
     public func getObjectVersion(bucketGuid: String, key: String, version: Int) async throws -> S3ObjectMeta? {
-        let rows = try await db.query(
+        let rows = try await qry(
             "SELECT \(top1)* FROM \(t)objects WHERE bucketguid = ? AND objectkey = ? AND version = ?\(limit1)",
             [.string(bucketGuid), .string(key), .int(version)]
         )
@@ -93,12 +111,12 @@ public actor DataAccess {
     }
 
     public func getObjectByGuid(_ guid: String) async throws -> S3ObjectMeta? {
-        let rows = try await db.query("SELECT \(top1)* FROM \(t)objects WHERE guid = ?\(limit1)", [.string(guid)])
+        let rows = try await qry("SELECT \(top1)* FROM \(t)objects WHERE guid = ?\(limit1)", [.string(guid)])
         return rows.first.map(mapObject)
     }
 
     public func getNextVersion(bucketGuid: String, key: String) async throws -> Int {
-        let rows = try await db.query(
+        let rows = try await qry(
             "SELECT COALESCE(MAX(version), 0) AS v FROM \(t)objects WHERE bucketguid = ? AND objectkey = ?",
             [.string(bucketGuid), .string(key)]
         )
@@ -106,13 +124,13 @@ public actor DataAccess {
     }
 
     public func saveObject(_ obj: S3ObjectMeta) async throws {
-        let rows = try await db.query(
+        let rows = try await qry(
             "SELECT COUNT(*) AS cnt FROM \(t)objects WHERE guid = ?", [.string(obj.guid)]
         )
         let exists = anyInt(rows.first?["cnt"] ?? .null) > 0
 
         if exists {
-            try await db.execute(
+            try await exec(
                 "UPDATE \(t)objects SET contenttype=?, contentlength=?, etag=?, md5=?, metadata=?, lastupdateutc=? WHERE guid=?",
                 [
                     .string(obj.contentType), .int(obj.contentLength),
@@ -123,7 +141,7 @@ public actor DataAccess {
                 ]
             )
         } else {
-            try await db.execute(
+            try await exec(
                 """
                 INSERT INTO \(t)objects
                   (guid, bucketguid, ownerguid, authorguid, objectkey, contenttype,
@@ -146,7 +164,7 @@ public actor DataAccess {
     }
 
     public func deleteObjectVersion(guid: String) async throws {
-        try await db.execute(
+        try await exec(
             "UPDATE \(t)objects SET deletemarker = 1, lastupdateutc = ? WHERE guid = ?",
             [.string(isoNow()), .string(guid)]
         )
@@ -168,7 +186,7 @@ public actor DataAccess {
         }
         sql += " ORDER BY objectkey"
 
-        let rows = try await db.query(sql, binds)
+        let rows = try await qry(sql, binds)
         let all = rows.map(mapObject)
 
         var objects: [S3ObjectMeta] = []
@@ -195,7 +213,7 @@ public actor DataAccess {
     }
 
     public func getBucketObjectStats(bucketGuid: String) async throws -> (count: Int, bytes: Int) {
-        let rows = try await db.query(
+        let rows = try await qry(
             "SELECT COUNT(*) AS cnt, COALESCE(SUM(contentlength), 0) AS bytes FROM \(t)objects WHERE bucketguid = ? AND deletemarker = 0",
             [.string(bucketGuid)]
         )

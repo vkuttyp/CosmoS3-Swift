@@ -33,13 +33,15 @@ public enum DatabaseFactory {
 
         case .postgres:
             let cfg = try parseKV(connectionString, defaults: ("localhost", 5432, "s3", "s3", "s3"))
-            return try await PostgresConnection.connect(
+            let tlsMode: SQLTLSConfiguration = connectionString.contains("sslmode=require") ? .require : .disable
+            let pg = try await PostgresConnection.connect(
                 configuration: .init(
                     host: cfg.host, port: cfg.port,
                     database: cfg.database, username: cfg.username, password: cfg.password,
-                    tls: .prefer
+                    tls: tlsMode
                 )
             )
+            return pg
 
         case .mysql:
             let cfg = try parseKV(connectionString, defaults: ("localhost", 3306, "s3", "s3", "s3"))
