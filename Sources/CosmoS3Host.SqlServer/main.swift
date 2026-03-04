@@ -25,7 +25,7 @@ print("[CosmoS3Host.SqlServer] Starting on port \(settings.port)...")
 
 let rawDb = try await DatabaseFactory.create(type: .sqlserver, connectionString: settings.connectionString)
 try await DatabaseFactory.ensureSchema(db: rawDb, type: .sqlserver)
-let da = DataAccess(db: rawDb)
+let da = DataAccess(db: rawDb, tablePrefix: "s3.", useMssql: true)
 let bucketManager = BucketManager(da: da)
 try await bucketManager.load()
 

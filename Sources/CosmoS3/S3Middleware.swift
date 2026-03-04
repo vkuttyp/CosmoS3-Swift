@@ -45,6 +45,7 @@ public final class S3Middleware: Middleware {
         } catch let s3err as S3Error {
             sendError(context, error: s3err)
         } catch {
+            print("[CosmoS3] Internal error: \(error)")
             sendError(context, code: "InternalError", message: error.localizedDescription, status: 500)
         }
     }

@@ -6,11 +6,18 @@ import CosmoSQLCore
 public actor DataAccess {
     let db: any SQLDatabase
     private let t: String   // table prefix "s3_"
+    private let useMssql: Bool  // MSSQL uses TOP n / different dialect
 
-    public init(db: any SQLDatabase, tablePrefix: String = "s3_") {
+    public init(db: any SQLDatabase, tablePrefix: String = "s3_", useMssql: Bool = false) {
         self.db = db
         self.t = tablePrefix
+        self.useMssql = useMssql
     }
+
+    /// Returns `TOP 1` (MSSQL) or empty string (all others — `LIMIT 1` appended at end).
+    private var top1: String { useMssql ? "TOP 1 " : "" }
+    /// Appended at end of SELECT for non-MSSQL databases.
+    private var limit1: String { useMssql ? "" : " LIMIT 1" }
 
     // MARK: - Users
 
@@ -71,7 +78,7 @@ public actor DataAccess {
 
     public func getObjectLatest(bucketGuid: String, key: String) async throws -> S3ObjectMeta? {
         let rows = try await db.query(
-            "SELECT * FROM \(t)objects WHERE bucketguid = ? AND objectkey = ? AND deletemarker = 0 ORDER BY version DESC LIMIT 1",
+            "SELECT \(top1)* FROM \(t)objects WHERE bucketguid = ? AND objectkey = ? AND deletemarker = 0 ORDER BY version DESC\(limit1)",
             [.string(bucketGuid), .string(key)]
         )
         return rows.first.map(mapObject)
@@ -79,14 +86,14 @@ public actor DataAccess {
 
     public func getObjectVersion(bucketGuid: String, key: String, version: Int) async throws -> S3ObjectMeta? {
         let rows = try await db.query(
-            "SELECT * FROM \(t)objects WHERE bucketguid = ? AND objectkey = ? AND version = ? LIMIT 1",
+            "SELECT \(top1)* FROM \(t)objects WHERE bucketguid = ? AND objectkey = ? AND version = ?\(limit1)",
             [.string(bucketGuid), .string(key), .int(version)]
         )
         return rows.first.map(mapObject)
     }
 
     public func getObjectByGuid(_ guid: String) async throws -> S3ObjectMeta? {
-        let rows = try await db.query("SELECT * FROM \(t)objects WHERE guid = ? LIMIT 1", [.string(guid)])
+        let rows = try await db.query("SELECT \(top1)* FROM \(t)objects WHERE guid = ?\(limit1)", [.string(guid)])
         return rows.first.map(mapObject)
     }
 
@@ -95,14 +102,14 @@ public actor DataAccess {
             "SELECT COALESCE(MAX(version), 0) AS v FROM \(t)objects WHERE bucketguid = ? AND objectkey = ?",
             [.string(bucketGuid), .string(key)]
         )
-        return Int(rows.first?["v"].asInt64() ?? 0) + 1
+        return anyInt(rows.first?["v"] ?? .null) + 1
     }
 
     public func saveObject(_ obj: S3ObjectMeta) async throws {
         let rows = try await db.query(
             "SELECT COUNT(*) AS cnt FROM \(t)objects WHERE guid = ?", [.string(obj.guid)]
         )
-        let exists = (rows.first?["cnt"].asInt64() ?? 0) > 0
+        let exists = anyInt(rows.first?["cnt"] ?? .null) > 0
 
         if exists {
             try await db.execute(
@@ -192,50 +199,76 @@ public actor DataAccess {
             "SELECT COUNT(*) AS cnt, COALESCE(SUM(contentlength), 0) AS bytes FROM \(t)objects WHERE bucketguid = ? AND deletemarker = 0",
             [.string(bucketGuid)]
         )
-        let cnt = Int(rows.first?["cnt"].asInt64() ?? 0)
-        let bytes = Int(rows.first?["bytes"].asInt64() ?? 0)
+        let cnt = anyInt(rows.first?["cnt"] ?? .null)
+        let bytes = anyInt(rows.first?["bytes"] ?? .null)
         return (cnt, bytes)
+    }
+
+    // MARK: - Universal value helpers (handle SQLite/Postgres/MySQL/MSSQL type differences)
+
+    /// Returns the integer value from any integer SQLValue case (.int, .int8, .int16, .int32, .int64).
+    private func anyInt(_ v: SQLValue) -> Int {
+        switch v {
+        case .int(let n):   return n
+        case .int8(let n):  return Int(n)
+        case .int16(let n): return Int(n)
+        case .int32(let n): return Int(n)
+        case .int64(let n): return Int(n)
+        default:            return 0
+        }
+    }
+
+    /// Returns a string from a .string or .date SQLValue.
+    private func anyStr(_ v: SQLValue) -> String? {
+        switch v {
+        case .string(let s): return s.isEmpty ? nil : s
+        case .date(let d):
+            let f = ISO8601DateFormatter()
+            f.formatOptions = [.withInternetDateTime]
+            return f.string(from: d)
+        default: return nil
+        }
     }
 
     // MARK: - Mapping helpers
 
     private func mapUser(_ row: SQLRow) -> S3User {
-        S3User(guid: row["guid"].asString() ?? "", name: row["name"].asString() ?? "",
-               email: row["email"].asString() ?? "", createdUtc: row["createdutc"].asString() ?? "")
+        S3User(guid: anyStr(row["guid"]) ?? "", name: anyStr(row["name"]) ?? "",
+               email: anyStr(row["email"]) ?? "", createdUtc: anyStr(row["createdutc"]) ?? "")
     }
 
     private func mapCredential(_ row: SQLRow) -> S3Credential {
-        S3Credential(guid: row["guid"].asString() ?? "", userGuid: row["userguid"].asString() ?? "",
-                     accessKey: row["accesskey"].asString() ?? "", secretKey: row["secretkey"].asString() ?? "",
-                     isBase64: (row["isbase64"].asInt() ?? 0) != 0)
+        S3Credential(guid: anyStr(row["guid"]) ?? "", userGuid: anyStr(row["userguid"]) ?? "",
+                     accessKey: anyStr(row["accesskey"]) ?? "", secretKey: anyStr(row["secretkey"]) ?? "",
+                     isBase64: anyInt(row["isbase64"]) != 0)
     }
 
     private func mapBucket(_ row: SQLRow) -> S3Bucket {
-        S3Bucket(id: Int(row["id"].asInt64() ?? 0), guid: row["guid"].asString() ?? "",
-                 ownerGuid: row["ownerguid"].asString() ?? "", name: row["name"].asString() ?? "",
-                 region: row["regionstring"].asString() ?? "us-west-1",
-                 storageType: row["storagetype"].asString() ?? "Disk",
-                 diskDirectory: row["diskdirectory"].asString() ?? "",
-                 enableVersioning: (row["enableversioning"].asInt64() ?? 0) != 0,
-                 enablePublicWrite: (row["enablepublicwrite"].asInt64() ?? 0) != 0,
-                 enablePublicRead: (row["enablepublicread"].asInt64() ?? 0) != 0,
-                 createdUtc: row["createdutc"].asString() ?? "")
+        S3Bucket(id: anyInt(row["id"]), guid: anyStr(row["guid"]) ?? "",
+                 ownerGuid: anyStr(row["ownerguid"]) ?? "", name: anyStr(row["name"]) ?? "",
+                 region: anyStr(row["regionstring"]) ?? "us-west-1",
+                 storageType: anyStr(row["storagetype"]) ?? "Disk",
+                 diskDirectory: anyStr(row["diskdirectory"]) ?? "",
+                 enableVersioning: anyInt(row["enableversioning"]) != 0,
+                 enablePublicWrite: anyInt(row["enablepublicwrite"]) != 0,
+                 enablePublicRead: anyInt(row["enablepublicread"]) != 0,
+                 createdUtc: anyStr(row["createdutc"]) ?? isoNow())
     }
 
     private func mapObject(_ row: SQLRow) -> S3ObjectMeta {
-        S3ObjectMeta(id: Int(row["id"].asInt64() ?? 0), guid: row["guid"].asString() ?? "",
-                     bucketGuid: row["bucketguid"].asString() ?? "",
-                     ownerGuid: row["ownerguid"].asString() ?? "",
-                     authorGuid: row["authorguid"].asString() ?? "",
-                     key: row["objectkey"].asString() ?? "",
-                     contentType: row["contenttype"].asString() ?? "application/octet-stream",
-                     contentLength: Int(row["contentlength"].asInt64() ?? 0),
-                     version: Int(row["version"].asInt64() ?? 1),
-                     etag: row["etag"].asString() ?? "",
-                     blobFilename: row["blobfilename"].asString() ?? "",
-                     isFolder: (row["isfolder"].asInt64() ?? 0) != 0,
-                     deleteMarker: (row["deletemarker"].asInt64() ?? 0) != 0,
-                     md5: row["md5"].asString(),
-                     metadata: row["metadata"].asString())
+        S3ObjectMeta(id: anyInt(row["id"]), guid: anyStr(row["guid"]) ?? "",
+                     bucketGuid: anyStr(row["bucketguid"]) ?? "",
+                     ownerGuid: anyStr(row["ownerguid"]) ?? "",
+                     authorGuid: anyStr(row["authorguid"]) ?? "",
+                     key: anyStr(row["objectkey"]) ?? "",
+                     contentType: anyStr(row["contenttype"]) ?? "application/octet-stream",
+                     contentLength: anyInt(row["contentlength"]),
+                     version: anyInt(row["version"]),
+                     etag: anyStr(row["etag"]) ?? "",
+                     blobFilename: anyStr(row["blobfilename"]) ?? "",
+                     isFolder: anyInt(row["isfolder"]) != 0,
+                     deleteMarker: anyInt(row["deletemarker"]) != 0,
+                     md5: anyStr(row["md5"]),
+                     metadata: anyStr(row["metadata"]))
     }
 }
