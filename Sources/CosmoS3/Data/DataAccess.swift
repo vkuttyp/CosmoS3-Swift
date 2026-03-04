@@ -3,7 +3,13 @@ import CosmoSQLCore
 
 // MARK: - DataAccess
 
-public actor DataAccess {
+/// Stateless data-access layer backed by a `SQLDatabase` (typically an `SQLConnectionPool`).
+///
+/// Deliberately NOT an actor: the pool already provides thread-safety and limits
+/// concurrent connections. Making DataAccess an actor would allow actor re-entrancy
+/// at every `await db.query()` suspension point, which can cause multiple concurrent
+/// tasks to drive the same underlying connection's AsyncStream iterator simultaneously.
+public final class DataAccess: @unchecked Sendable {
     let db: any SQLDatabase
     private let t: String       // table prefix "s3_" or "s3."
     private let useMssql: Bool  // MSSQL: TOP 1 instead of LIMIT 1

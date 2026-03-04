@@ -9,8 +9,7 @@ import CosmoSQLCore
 /// - Maintains a pool of ready connections (up to `maxConnections`).
 /// - New connections are created on demand up to the limit.
 /// - Callers that exceed the limit wait until a connection is released.
-/// - On error, the connection is returned to the pool (the next caller will
-///   get a fresh error if the connection is actually broken).
+/// - On error, the connection is discarded (not returned) to avoid reusing broken connections.
 public actor SQLConnectionPool: SQLDatabase {
 
     // MARK: - Types
@@ -31,7 +30,6 @@ public actor SQLConnectionPool: SQLDatabase {
     /// Create a pool.
     /// - Parameters:
     ///   - maxConnections: Maximum concurrent connections. Default 10.
-    ///   - minConnections: Connections to warm up at init time. Default 1.
     ///   - factory: Async closure that opens one new connection.
     public init(maxConnections: Int = 10, factory: @escaping Factory) {
         self.maxConnections = maxConnections
@@ -46,7 +44,7 @@ public actor SQLConnectionPool: SQLDatabase {
         }
     }
 
-    // MARK: - Acquire / Release
+    // MARK: - Acquire
 
     private func acquire() async throws -> any SQLDatabase {
         if let conn = available.popLast() {
@@ -63,6 +61,9 @@ public actor SQLConnectionPool: SQLDatabase {
         }
     }
 
+    // MARK: - Release / Discard
+
+    /// Return a healthy connection to the pool or give it directly to the next waiter.
     private func release(_ conn: any SQLDatabase) {
         inUse -= 1
         if let waiter = waiters.first {
@@ -71,6 +72,26 @@ public actor SQLConnectionPool: SQLDatabase {
             waiter.resume(returning: conn)
         } else {
             available.append(conn)
+        }
+    }
+
+    /// Discard a broken/cancelled connection and open a fresh one for any waiter.
+    private func discardConnection(_ conn: any SQLDatabase) {
+        inUse -= 1
+        Task { try? await conn.close() }
+        if let waiter = waiters.first {
+            waiters.removeFirst()
+            inUse += 1
+            let factory = self.factory
+            Task {
+                do {
+                    let fresh = try await factory()
+                    waiter.resume(returning: fresh)
+                } catch {
+                    self.inUse -= 1  // failed to create replacement
+                    waiter.resume(throwing: error)
+                }
+            }
         }
     }
 
@@ -83,7 +104,8 @@ public actor SQLConnectionPool: SQLDatabase {
             release(conn)
             return rows
         } catch {
-            release(conn)
+            // Discard broken connection; don't return to pool
+            discardConnection(conn)
             throw error
         }
     }
@@ -95,21 +117,15 @@ public actor SQLConnectionPool: SQLDatabase {
             release(conn)
             return affected
         } catch {
-            release(conn)
+            discardConnection(conn)
             throw error
         }
     }
 
     public func close() async throws {
-        // Resume any waiting callers with an error
-        for waiter in waiters {
-            waiter.resume(throwing: SQLConnectionPoolError.closed)
-        }
+        for waiter in waiters { waiter.resume(throwing: SQLConnectionPoolError.closed) }
         waiters = []
-        // Close all idle connections
-        for conn in available {
-            try? await conn.close()
-        }
+        for conn in available { try? await conn.close() }
         available = []
     }
 }
