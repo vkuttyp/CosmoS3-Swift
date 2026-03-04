@@ -7,3 +7,4 @@ DerivedData/
 *.o
 *.d
 *.swp
+*.db\n*.db-shm\n*.db-wal\ndisk*/\ndisk/
