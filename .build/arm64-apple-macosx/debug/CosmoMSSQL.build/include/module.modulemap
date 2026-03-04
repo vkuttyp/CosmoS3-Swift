@@ -1,3 +1,0 @@
-module CosmoMSSQL {
-    header "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMSSQL.build/include/CosmoMSSQL-Swift.h"
-}

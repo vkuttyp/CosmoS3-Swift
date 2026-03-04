@@ -1,4 +1,0 @@
-module CNIOBoringSSLShims {
-    umbrella header "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio-ssl/Sources/CNIOBoringSSLShims/include/CNIOBoringSSLShims.h"
-    export *
-}

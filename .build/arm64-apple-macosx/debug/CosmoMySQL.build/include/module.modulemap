@@ -1,3 +1,0 @@
-module CosmoMySQL {
-    header "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/CosmoMySQL.build/include/CosmoMySQL-Swift.h"
-}

@@ -1,4 +1,0 @@
-module CNIODarwin {
-    umbrella header "/Users/kutty/dev/CosmoS3-Swift/.build/checkouts/swift-nio/Sources/CNIODarwin/include/CNIODarwin.h"
-    export *
-}

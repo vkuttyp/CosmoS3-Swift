@@ -1,3 +1,0 @@
-module NIOConcurrencyHelpers {
-    header "/Users/kutty/dev/CosmoS3-Swift/.build/arm64-apple-macosx/debug/NIOConcurrencyHelpers.build/include/NIOConcurrencyHelpers-Swift.h"
-}
