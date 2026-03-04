@@ -37,6 +37,22 @@ public actor DataAccess {
         try await db.execute(sql(query), binds)
     }
 
+    /// Returns current UTC time in a format accepted by all supported databases.
+    /// MySQL DATETIME does not accept ISO 8601 'Z' suffix; use 'YYYY-MM-DD HH:MM:SS' universally.
+    private func dbNow() -> String {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        f.timeZone = TimeZone(abbreviation: "UTC")!
+        return f.string(from: Date())
+    }
+
+    /// Converts any date string to DB-safe format (strips T/Z for MySQL compatibility).
+    private func toDbDate(_ s: String) -> String {
+        let r = s.replacingOccurrences(of: "T", with: " ")
+        if let dot = r.firstIndex(of: ".") { return String(r[r.startIndex..<dot]) }
+        return r.hasSuffix("Z") ? String(r.dropLast()) : r
+    }
+
     // MARK: - Users
 
     public func getUser(guid: String) async throws -> S3User? {
@@ -83,7 +99,7 @@ public actor DataAccess {
                 .int(bucket.enableVersioning ? 1 : 0),
                 .int(bucket.enablePublicWrite ? 1 : 0),
                 .int(bucket.enablePublicRead ? 1 : 0),
-                .string(bucket.createdUtc),
+                .string(toDbDate(bucket.createdUtc)),
             ]
         )
     }
@@ -137,7 +153,7 @@ public actor DataAccess {
                     .string(obj.etag),
                     obj.md5.map { SQLValue.string($0) } ?? .null,
                     obj.metadata.map { SQLValue.string($0) } ?? .null,
-                    .string(isoNow()), .string(obj.guid),
+                    .string(dbNow()), .string(obj.guid),
                 ]
             )
         } else {
@@ -157,7 +173,7 @@ public actor DataAccess {
                     .int(obj.isFolder ? 1 : 0),
                     obj.md5.map { SQLValue.string($0) } ?? .null,
                     obj.metadata.map { SQLValue.string($0) } ?? .null,
-                    .string(obj.createdUtc), .string(obj.createdUtc), .string(obj.createdUtc),
+                    .string(toDbDate(obj.createdUtc)), .string(toDbDate(obj.createdUtc)), .string(toDbDate(obj.createdUtc)),
                 ]
             )
         }
@@ -166,7 +182,7 @@ public actor DataAccess {
     public func deleteObjectVersion(guid: String) async throws {
         try await exec(
             "UPDATE \(t)objects SET deletemarker = 1, lastupdateutc = ? WHERE guid = ?",
-            [.string(isoNow()), .string(guid)]
+            [.string(dbNow()), .string(guid)]
         )
     }
 
