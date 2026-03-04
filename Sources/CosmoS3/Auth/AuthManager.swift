@@ -20,13 +20,93 @@ public final class AuthManager: @unchecked Sendable {
         }
         // Signature validation
         let isValid: Bool
-        if s3req.signatureVersion == 4 {
+        if s3req.isPresigned {
+            isValid = validatePresigned(s3req: s3req, credential: cred)
+        } else if s3req.signatureVersion == 4 {
             isValid = validateSigV4(s3req: s3req, credential: cred)
         } else {
             isValid = validateSigV2(s3req: s3req, credential: cred)
         }
         guard isValid else { return nil }
         return (user, cred)
+    }
+
+    // MARK: - Presigned URL validation
+
+    private func validatePresigned(s3req: S3Request, credential: S3Credential) -> Bool {
+        let q = s3req.queryItems
+
+        // SigV4 presigned (X-Amz-Signature)
+        if let providedSig = q["X-Amz-Signature"] {
+            return validatePresignedV4(s3req: s3req, credential: credential, providedSig: providedSig)
+        }
+        // SigV2 presigned (Signature + Expires)
+        if let providedSig = q["Signature"] {
+            return validatePresignedV2(s3req: s3req, credential: credential, providedSig: providedSig)
+        }
+        return false
+    }
+
+    private func validatePresignedV4(s3req: S3Request, credential: S3Credential, providedSig: String) -> Bool {
+        let q = s3req.queryItems
+        guard let credParam = q["X-Amz-Credential"],
+              let datetime  = q["X-Amz-Date"],
+              let expiresStr = q["X-Amz-Expires"],
+              let expires = Int(expiresStr),
+              let signedHeadersStr = q["X-Amz-SignedHeaders"] else { return false }
+
+        // Check expiry
+        let isoFmt = DateFormatter()
+        isoFmt.dateFormat = "yyyyMMdd'T'HHmmss'Z'"
+        isoFmt.timeZone = TimeZone(identifier: "UTC")
+        guard let signedAt = isoFmt.date(from: datetime) else { return false }
+        guard Date() <= signedAt.addingTimeInterval(TimeInterval(expires)) else { return false }
+
+        // Extract scope
+        let credParts = credParam.components(separatedBy: "/")
+        guard credParts.count >= 5 else { return false }
+        let dateStr = credParts[1]
+        let region  = credParts[2]
+        let service = credParts[3]
+
+        // Rebuild canonical query string WITHOUT X-Amz-Signature
+        let canonicalQS = q
+            .filter { $0.key != "X-Amz-Signature" }
+            .sorted { $0.key < $1.key }
+            .map { "\(encode($0.key))=\(encode($0.value))" }
+            .joined(separator: "&")
+
+        // Canonical headers (only signed headers, for presigned = "host")
+        let signedHeaderNames = signedHeadersStr.components(separatedBy: ";")
+        let canonicalHeaders = buildCanonicalHeaders(headers: s3req.headers, names: signedHeaderNames)
+
+        // Canonical request — body hash is UNSIGNED-PAYLOAD
+        let method = methodString(s3req: s3req)
+        let canonicalURI = canonicalizeURI(s3req: s3req)
+        let canonicalRequest = [method, canonicalURI, canonicalQS, canonicalHeaders, signedHeadersStr, "UNSIGNED-PAYLOAD"]
+            .joined(separator: "\n")
+
+        // String to sign
+        let credScope = "\(dateStr)/\(region)/\(service)/aws4_request"
+        let strToSign = "AWS4-HMAC-SHA256\n\(datetime)\n\(credScope)\n\(sha256Hex(Data(canonicalRequest.utf8)))"
+
+        let signingKey = deriveSigningKey(secret: credential.secretKey, date: dateStr, region: region, service: service)
+        return hmacSHA256Hex(key: signingKey, data: Data(strToSign.utf8)) == providedSig
+    }
+
+    private func validatePresignedV2(s3req: S3Request, credential: S3Credential, providedSig: String) -> Bool {
+        let q = s3req.queryItems
+        guard let expiresStr = q["Expires"],
+              let expires = TimeInterval(expiresStr) else { return false }
+
+        // Check expiry
+        guard Date() <= Date(timeIntervalSince1970: expires) else { return false }
+
+        // StringToSign for presigned v2: METHOD\n\nContentType\nExpires\nResource
+        let contentType = s3req.headers["content-type"] ?? ""
+        let resource = buildCanonicalResource(s3req: s3req)
+        let stringToSign = "\(methodString(s3req: s3req))\n\n\(contentType)\n\(expiresStr)\n\(resource)"
+        return hmacSHA1Base64(key: credential.secretKey, data: stringToSign) == providedSig
     }
 
     // MARK: - SigV4

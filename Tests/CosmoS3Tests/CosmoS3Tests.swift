@@ -85,3 +85,47 @@ final class S3XmlTests: XCTestCase {
         XCTAssertEqual(items[1]["VersionId"], "2")
     }
 }
+
+// MARK: - Presigned URL tests
+
+final class PresignedUrlTests: XCTestCase {
+    func testPresignedGetUrl() {
+        let gen = PresignedUrlGenerator(host: "127.0.0.1:18001", region: "us-east-1")
+        let url = gen.presign(method: "GET", bucket: "my-bucket", key: "photo.jpg",
+                              accessKey: "AKID", secretKey: "SECRET", expiresIn: 3600)
+        XCTAssertNotNil(url)
+        let s = url!.absoluteString
+        XCTAssertTrue(s.hasPrefix("http://127.0.0.1:18001/my-bucket/photo.jpg?"))
+        XCTAssertTrue(s.contains("X-Amz-Algorithm=AWS4-HMAC-SHA256"))
+        XCTAssertTrue(s.contains("X-Amz-Credential=AKID"))
+        XCTAssertTrue(s.contains("X-Amz-Expires=3600"))
+        XCTAssertTrue(s.contains("X-Amz-SignedHeaders=host"))
+        XCTAssertTrue(s.contains("X-Amz-Signature="))
+    }
+
+    func testPresignedPutUrl() {
+        let gen = PresignedUrlGenerator(host: "s3.example.com", region: "eu-west-1")
+        let url = gen.presign(method: "PUT", bucket: "uploads", key: "video.mp4",
+                              accessKey: "KEY1", secretKey: "SKEY", expiresIn: 900)
+        XCTAssertNotNil(url)
+        XCTAssertTrue(url!.absoluteString.contains("/uploads/video.mp4"))
+    }
+
+    func testPresignedUrlHasNoAuthHeader() {
+        // The URL must NOT contain X-Amz-Signature in the path itself
+        let gen = PresignedUrlGenerator(host: "localhost:18001")
+        let url = gen.presign(method: "GET", bucket: "b", key: "k",
+                              accessKey: "A", secretKey: "S", expiresIn: 60)!
+        // Signature must be in the query string only
+        XCTAssertTrue(url.query?.contains("X-Amz-Signature=") == true)
+        XCTAssertNil(url.path.range(of: "X-Amz-Signature"))
+    }
+
+    func testPresignedExtraQueryParams() {
+        let gen = PresignedUrlGenerator(host: "localhost", region: "us-east-1")
+        let url = gen.presign(method: "GET", bucket: "b", key: "k",
+                              accessKey: "A", secretKey: "S",
+                              extraQuery: ["versionId": "5"])
+        XCTAssertTrue(url?.query?.contains("versionId=5") == true)
+    }
+}
