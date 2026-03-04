@@ -18,14 +18,22 @@ public enum DatabaseType: String, Sendable {
 
 public enum DatabaseFactory {
 
-    /// Open a connection from a connection string.
+    /// Open a pooled database from a connection string.
+    /// SQLite uses a single connection (thread-safe via actor); PostgreSQL, MySQL and SQL Server
+    /// use a `SQLConnectionPool` with up to `maxConnections` concurrent connections.
+    ///
     /// - SQLite:    file path (`./data.db`) or `:memory:`
     /// - Postgres:  `host=localhost port=5432 dbname=s3 user=s3 password=s3`
     /// - MySQL:     same key=value style
     /// - SQL Server: ADO.NET style `Server=host,1433;Database=s3;User Id=sa;Password=P@ss`
-    public static func create(type: DatabaseType, connectionString: String) async throws -> any SQLDatabase {
+    public static func create(
+        type: DatabaseType,
+        connectionString: String,
+        maxConnections: Int = 10
+    ) async throws -> any SQLDatabase {
         switch type {
         case .sqlite:
+            // SQLite serialises via its own actor; no pool needed.
             let storage: SQLiteConnection.Storage = connectionString.lowercased() == ":memory:"
                 ? .memory
                 : .file(path: connectionString)
@@ -34,29 +42,40 @@ public enum DatabaseFactory {
         case .postgres:
             let cfg = try parseKV(connectionString, defaults: ("localhost", 5432, "s3", "s3", "s3"))
             let tlsMode: SQLTLSConfiguration = connectionString.contains("sslmode=require") ? .require : .disable
-            let pg = try await PostgresConnection.connect(
-                configuration: .init(
-                    host: cfg.host, port: cfg.port,
-                    database: cfg.database, username: cfg.username, password: cfg.password,
-                    tls: tlsMode
+            let pool = SQLConnectionPool(maxConnections: maxConnections) {
+                try await PostgresConnection.connect(
+                    configuration: .init(
+                        host: cfg.host, port: cfg.port,
+                        database: cfg.database, username: cfg.username, password: cfg.password,
+                        tls: tlsMode
+                    )
                 )
-            )
-            return pg
+            }
+            try await pool.warmUp(count: min(2, maxConnections))
+            return pool
 
         case .mysql:
             let cfg = try parseKV(connectionString, defaults: ("localhost", 3306, "s3", "s3", "s3"))
-            return try await MySQLConnection.connect(
-                configuration: .init(
-                    host: cfg.host, port: cfg.port,
-                    database: cfg.database, username: cfg.username, password: cfg.password,
-                    tls: .prefer
+            let pool = SQLConnectionPool(maxConnections: maxConnections) {
+                try await MySQLConnection.connect(
+                    configuration: .init(
+                        host: cfg.host, port: cfg.port,
+                        database: cfg.database, username: cfg.username, password: cfg.password,
+                        tls: .prefer
+                    )
                 )
-            )
+            }
+            try await pool.warmUp(count: min(2, maxConnections))
+            return pool
 
         case .sqlserver:
-            return try await MSSQLConnection.connect(
-                configuration: try .init(connectionString: connectionString)
-            )
+            let pool = SQLConnectionPool(maxConnections: maxConnections) {
+                try await MSSQLConnection.connect(
+                    configuration: try .init(connectionString: connectionString)
+                )
+            }
+            try await pool.warmUp(count: min(2, maxConnections))
+            return pool
         }
     }
 
