@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vkuttyp/CosmoSQLClient-Swift.git",
       "state" : {
-        "revision" : "facc3074b9fa9c0a7d2a6f1adeca9087eafec15c",
-        "version" : "1.4.3"
+        "revision" : "cd420dbdff09c4da759328d649b1c1a41feb1531",
+        "version" : "1.5.0"
       }
     },
     {

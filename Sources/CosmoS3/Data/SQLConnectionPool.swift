@@ -10,7 +10,7 @@ import CosmoSQLCore
 /// - New connections are created on demand up to the limit.
 /// - Callers that exceed the limit wait until a connection is released.
 /// - On error, the connection is discarded (not returned) to avoid reusing broken connections.
-public actor SQLConnectionPool: SQLDatabase {
+public actor SQLConnectionPool: @preconcurrency SQLDatabase {
 
     // MARK: - Types
 
@@ -120,6 +120,10 @@ public actor SQLConnectionPool: SQLDatabase {
             discardConnection(conn)
             throw error
         }
+    }
+
+    public nonisolated var advanced: any AdvancedSQLDatabase {
+        fatalError("Advanced features (streaming) are not supported via connection pool yet.")
     }
 
     public func close() async throws {

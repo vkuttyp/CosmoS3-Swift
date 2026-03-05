@@ -37,7 +37,7 @@ public enum DatabaseFactory {
             let storage: SQLiteConnection.Storage = connectionString.lowercased() == ":memory:"
                 ? .memory
                 : .file(path: connectionString)
-            return try await SQLiteConnection.open(configuration: .init(storage: storage))
+            return try SQLiteConnection.open(configuration: .init(storage: storage))
 
         case .postgres:
             let cfg = try parseKV(connectionString, defaults: ("localhost", 5432, "s3", "s3", "s3"))
@@ -88,7 +88,7 @@ public enum DatabaseFactory {
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             .filter { !$0.isEmpty }
         for stmt in statements {
-            try await db.execute(stmt)
+            _ = try await db.execute(stmt)
         }
     }
 
