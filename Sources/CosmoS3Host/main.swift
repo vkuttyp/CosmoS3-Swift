@@ -48,7 +48,8 @@ let bucketManager = BucketManager(da: da)
 try await bucketManager.load()
 
 let builder = CosmoWebApplicationBuilder()
-    .listenOn(port: settings.port)
+builder.configurationBuilder.addJsonFile("Sources/CosmoS3Host/appsettings.json")
+builder.listenOn(port: settings.port)
 
 if settings.logging { builder.useLogging() }
 if settings.cors    { builder.useCors() }
