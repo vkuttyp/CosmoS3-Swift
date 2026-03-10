@@ -12,8 +12,8 @@ let package = Package(
         .executable(name: "CosmoS3Host.SqlServer", targets: ["CosmoS3Host.SqlServer"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/vkuttyp/CosmoApiServer-Swift.git", from: "1.0.0"),
-        .package(url: "https://github.com/vkuttyp/CosmoSQLClient-Swift.git", from: "1.4.3"),
+        .package(url: "https://github.com/vkuttyp/CosmoApiServer-Swift.git", from: "1.1.0"),
+        .package(url: "https://github.com/vkuttyp/CosmoSQLClient-Swift.git", branch: "main"),
         .package(url: "https://github.com/apple/swift-crypto.git", from: "3.0.0"),
     ],
     targets: [
